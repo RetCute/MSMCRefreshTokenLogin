@@ -5,6 +5,10 @@ import json
 print("使用本软件请将此软件与hmcl放置再一个目录.确保文件夹中有hmcl.json文件如果没有请先打开hmcl初始化")
 print("右键hmcl.json把Hidden/隐藏选项去掉.再使用本软件")
 refresh_token = input("请输入Refresh_Token:")
+print("Manghui测得输入:000000004c12ae6f")
+print("FAM测得输入:00000000402b5328")
+print("其他Checker请询问dev client_id")
+client_id = input('请输入client_id:')
 
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko", "Accept-Language": "en-US,en;q=0.9,fa;q=0.8"}
 data = {
@@ -13,7 +17,7 @@ data = {
     "scope": "service::user.auth.xboxlive.com::MBI_SSL",
     "refresh_token": refresh_token,
     "foci": "1",
-    "client_id": "00000000402b5328",
+    "client_id": client_id,
     "grant_type": "refresh_token"
 }
 res = requests.post("https://login.live.com/oauth20_token.srf", headers=headers, data=data)
